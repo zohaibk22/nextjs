@@ -8,7 +8,7 @@ interface User {
 const UsersPage = async () => {
   const res: User[] = await fetch(
     "https://jsonplaceholder.typicode.com/users",
-    { next: { revalidate: 10 } }
+    { cache: "no-store" }
   ).then((data) => data.json());
   return (
     <>
